@@ -25,3 +25,20 @@ How would you design a scalable, highly available CI/CD system for microservices
 25. How do you enforce compliance and auditability in your CI/CD processes across global regions (e.g., GDPR, HIPAA)?
 26. What's your strategy for managing container image security across all stages of a DevOps pipeline?
 27. How would you integrate runtime threat detection in Kubernetes using tools like Falco or Sysdig?
+Describe a situation where you had to troubleshoot a technical issue under a tight deadline. What methodology did you follow?
+Scenario: “Your CI build fails with ‘dependency not found.’ Outline your investigation steps.”
+You notice intermittent 502 errors during canary deployment. How will you identify the root cause?
+CI/CD pipeline takes 40+ minutes. What optimizations would you apply?
+System Design & Architecture
+Design a highly available logging/monitoring system for 100+ microservices across 3 regions.
+How would you implement secure secret rotation (e.g., in Azure DevOps pipelines)?
+Your production AKS cluster is failing health checks randomly — how do you debug?
+Explain a rollback plan for a Kubernetes deployment using Terraform.
+How do you handle zero-downtime schema migrations for a stateful database?
+Design a cost-efficient nightly-reporting pipeline with 3-year log retention.
+Incident Response & On-the-Spot Thinking
+An Azure function is being throttled. How do you detect and mitigate it?
+You receive intermittent DNS resolution failures in cloud infra—what could be wrong?
+A critical end-user reports 10 sec latency spikes periodically — how do you root cause it?
+One pod shows high CPU usage without logs—what's your next step?
+Artifact uploads from Jenkins randomly fail—which layers do you investigate?
