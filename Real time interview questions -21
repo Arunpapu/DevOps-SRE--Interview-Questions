@@ -1,0 +1,20 @@
+Company: Johnson Controls
+YOE: 3 to 5
+Role: DevOps Eng. 
+L1 - interview round 
+
+
+Tell me about your roles and responsibilites ?
+Suppose your app is hosted on Kubernetes and you are not able to access it how you will troublshoot ?
+How you will be able to access the private NPM registry ?
+How do you set up the Self hosted runners ?
+How you migrated your alerts from Splunk to Kibana ?
+Where do you store the state file of terraform ?
+which Provider you have used in terraform ?
+Which tools you are using in your CICD set up ?
+Where is Kibana hosted for your project ?
+Suppose your pod is failing how do you troublshoot it ?
+What is the diffrence between Pod and Container ?
+How is the networking will flow when you are trying to access the aaplication which is deployed over the k8s ?
+What are the different type of services ?
+Pod is failing how will you troubleshoot ?
