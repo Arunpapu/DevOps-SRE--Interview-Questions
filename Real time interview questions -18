@@ -1,1 +1,89 @@
 
+Org: Persistent systems
+exp: less than 5
+Explain your last project
+What are the AWS resources you have used in your previous role?
+Can you write code in Python? (Provided some samples)
+What is terraform state mv?
+What are microservices?
+Explain flow of CI/CD pipeline
+Have u handled lambda? Explain your project
+How do you ensure POD to POD communication?
+What is hierarchy of Kubernetes?
+If you are given a project eg EC2 or EKS or anything else what are the things you would take into consideration from prerequisite till output?
+How would you decide on the type of environment required for deployment?
+Explain terraform statefile
+Explain terraform move command?
+What is subnet?
+If I have EC2 instance for which I don’t want to talk to internet but intra-communication can be possible, how to configure it?
+What is ECS & EKS and when would you choose either of it?
+If there is a vendor who provides VPN services for company A, his manager wants to view some dashboard but do not have AWS account. How would you help him?
+I have webapp in India and slowly users from abroad are also tyring to access it but there is latency. How would fix this issue, which service can help in reducing latency?
+What is AWS lambda and where have u used?
+What is Athena?
+What are the different type of S3 storages available?
+How do you scale EKS? What are the metrics considered and where do you add your inputs and How? Explain how you have done auto-scaling in your project
+
+EY interview questions. I just finished my interview at EY, and these are the questions they asked me.
+
+Explain the Kubernetes architecture and how it works.
+What is a Deployment in Kubernetes?
+What is a Service in Kubernetes?
+How does Pod-to-Pod communication work?
+What is Git Rebase?
+Explain your current project.
+What is a Pod Disruption Budget?
+What is the purpose of Docker?
+What is CrashLoopBackOff in Kubernetes?
+Have you deployed both applications and infrastructure? What kind of tech stack have you mainly worked on?
+For Java applications, what tool do you use to build them?
+Have you worked on Jenkins as your CI/CD tool, or used others like GitLab?
+What source code management tool have you used?
+What is the syntax or command you follow to deploy an application using Helm Charts?
+How do you manage concurrent builds in Jenkins and ensure performance doesn’t degrade?
+What is the difference between Declarative and Scripted pipelines?
+Have you used any artifact repositories like Nexus or Artifactory, and where do you store dependencies?
+What happens internally when you run a Maven build — how does it fetch dependencies from the repository?
+Have you used any security tool integrations in your pipelines?
+What is Rolling Strategy and Canary-based deployment?
+What is Hash-based deployment?
+What is a Persistent Volume in Kubernetes?
+What is a ConfigMap in Kubernetes?
+What is a Service Mesh and how does it work?
+What kind of observability tools have you used, and what metrics have you been monitoring?
+
+Here is the tcs questions for sre role
+
+What is Ansible?
+    
+What is an Ansible Playbook?
+What is an Ansible Role?
+What is Ansible Tower?
+What is the difference between PV and PVC in Kubernetes?
+What is ConfigMap and Scheduler in Kubernetes?
+Explain your current e-commerce project and its architecture.
+What types of nodes did you deploy on AWS?
+What is the difference between Interface Endpoint and Gateway Endpoint in AWS?
+What does idempotent mean in Ansible?
+
+How does Kubernetes work — how do the master and worker nodes communicate, and what runs inside them?
+What is CrashLoopBackOff, and how do you troubleshoot it?
+Why does a pod show a “Pending” status in Kubernetes?
+If a rollback fails, how will you handle it?
+What is the command for rolling back to a specific revision in Kubernetes?
+What is a PVC in Kubernetes?
+How does Ansible work?
+What is an Ansible Role, and how do you create it?
+When you run a module like yum or apt and get “command not found,” what’s the reason?
+What is a Terraform state file interpreter?
+What to do if a terraform apply takes too much time?
+How to assign and print a variable in Bash?
+What are Lists and Tuples in Python?
+How do you restrict access to AWS resources for a specific user?
+How do you restrict a user to only EC2 and RDS access?
+When you create a VPC, what default components are added?
+What is an Ansible Role, and how do you create it?
+Explain the AWS architecture shown in the diagram (CodePipeline, CodeBuild, CodeDeploy, CloudFormation, CloudWatch).
+Do you have experience with operating systems — Windows or Linux? What types of file permissions exist in Linux?
+
+
