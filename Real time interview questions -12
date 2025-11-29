@@ -1,1 +1,89 @@
+it & Version Control
+ • What does git add do and why is it important before committing?
+ • How do you stage only specific changes in Git?
+ • If you have to update 2 YAML files in a remote repo as a new joiner, how will you do it?
+ • What is Git stash & when do you use it?
+ • Difference between git fetch & git pull.
+ • What is git cherry-pick & when would you use it?
 
+⚙ Ansible
+ • What does an Ansible playbook look like & its main components?
+ • Explain a sample playbook for installing Docker or Nexus.
+
+🐳 Docker & Containers
+ • How to write a Dockerfile for a Maven project?
+ • What is multi-stage Docker build & why is it used? (also write one)
+ • How can two containers (app & DB) talk to each other?
+ • Best practices for production Dockerfiles.
+ • Why use a non-root user in Docker images?
+ • How to optimize Docker layers & reduce image size?
+ • Deploy a Dockerized app on EC2 using Terraform.
+ • CMD vs ENTRYPOINT vs RUN in Docker.
+
+☸ Kubernetes
+ • Explain Kubernetes architecture.
+ • Role of API server, etcd, kube-scheduler, kube-controller-manager, kubelet, kube-proxy.
+ • Different types of Services in Kubernetes.
+ • kubectl command to go inside a container in a Pod.
+ • kubectl command to get info about a Pod.
+ • kubectl command to get IPs of all pods.
+ • kubectl command to get IP of a specific pod.
+
+📜 Terraform & AWS
+ • Difference between a Terraform script & module.
+ • Have you written modules? How do you structure them?
+ • Create secure VPC with subnets & route tables in Terraform.
+ • Manage EC2 instances in multiple subnets.
+ • Best practices for Terraform infra provisioning.
+ • Pass user-data scripts to EC2 in Terraform.
+ • How do you manage state files if they get corrupted?
+ • Integrating Terraform with Kubernetes.
+
+🚀 Deployment Strategies
+ • Which strategy ensures zero downtime ?
+ • How does Rolling Update work?
+ • Experience with Blue-Green & Canary deployments.
+
+🔍 Code Quality & CI/CD
+ • Quality Profile vs Quality Gate in SonarQube.
+ • How to calculate code coverage in Maven with SonarQube.
+ • How to set up SonarQube on a server.
+ • What is a Jenkins Shared Library & how to use it.
+ • Shared library structure for reuse.
+
+📈 Monitoring & Observability
+ • Setting up Prometheus & Grafana from scratch.
+ • Integrating metrics/logs into Grafana dashboards.
+ • Monitoring & logging tools used & configurations.
+ • Alerts for infra & apps.
+
+📆 SDLC & ITIL
+ • SDLC basics & models (Agile, Waterfall, Spiral, DevOps).
+ • ITIL basics, stages, Incident/Problem/Change Management, relation to DevOps.
+
+💻 CI/CD Flow in Project
+ • Bitbucket → Jenkins → JFrog → Kubernetes (EKS) → ArgoCD → Helm end-to-end flow.
+ • Role of Helm repository in deployments.
+ • How dev/prod YAML repo syncs with Helm charts repo.
+
+
+RelevantZ interview questions , 5 years devops exp                                                                                                                            1.Have you ever migrated on-premesis db to cloud , especially postgres or any other (port no of postgres sql too pls if you remember)
+2.how do you login into pods using kubectl command
+3.you have two environments, I should not deploy anything on one environment and another environment infrastructure should deploy via terraform, what strategy you will use
+4.how do you build dc/dr setup and what is the purpose for DR
+5.what cost optimization methods you had used for reducing cost
+6.suppose there are 100 lines of code am writing in terraform, I want to avoid it, how do I achieve it
+7.what are the tools you had used in azure devops , where do you store the output of CI pipeline (azure artifact)
+8.what are the steps you create in azure pipeline 
+9.how do you store secrets in azure devops 
+10.have you ever automated .csr – .cer - .pfx certificate activity
+11.for what purpose do you use log analytics workspace 
+12.suppose a DB is there in private subnet, I want to communicate only with specific people , how do achieve it
+13.suppose there are multiple persons executing terraform commands, what problem will happen
+14.have you used any monitoring tools 
+15.suppose I want to communicate from subscription to another subscription, what are all the methods available to achieve it 
+16.tell me some commands on kubernetes – how do you troubleshoot it 
+17.what is terraform drift 
+there is data in ADF, data will not be constant always, it will be dynamic how do you get the data and analyse it and present (it can be done through pipeline too)
+19.what do you do with azure recovery service vault 
+20.how do you take backups and explain some strategies which you had used
