@@ -18,3 +18,227 @@ What is the diffrence between Pod and Container ?
 How is the networking will flow when you are trying to access the aaplication which is deployed over the k8s ?
 What are the different type of services ?
 Pod is failing how will you troubleshoot ?
+
+Why do we perform Docker image scanning, and what exactly does it check for?
+
+If you need to provision 100 EC2 instances and install an application on them, how would you accomplish that using your CI/CD pipeline?
+
+How do you identify and handle configuration drift using Ansible?
+
+If you have an existing complex infrastructure and want to introduce Terraform, how would you bring Terraform in line with the current setup?
+
+What types of automation have you implemented in your organization?
+
+Which access mode should a PersistentVolume use for database pods, and what is the reason behind that choice?
+
+Can you explain how traffic flows from an external user to your application running inside Kubernetes?
+
+What are CRDs in Kubernetes, and how do operators and controllers work in that context?
+
+What is the difference between a Security Group and a firewall?
+
+What is sed, and why is the -E (or -G, based on system) option used?
+
+How would you configure Argo CD to manage multiple environments?
+
+Why do we use an Ingress instead of exposing applications using the worker node’s host IP?
+
+Are Docker image layers read-only or read-write, and how does that work?
+
+What is the purpose of host networking and bridge networking in Docker?
+
+Can a VPC CIDR block go beyond /16? Why or why not?
+
+What is the best approach to securely store application secrets?
+
+Why do we use roles in Ansible, and what benefits do they provide?
+
+How do you define and apply NetworkPolicies for a StatefulSet—specifically for a database pod?
+Why do we use DaemonSets in Kubernetes, and what are some examples of DaemonSets you have implemented in your organization?
+Can you explain the branching strategy your team follows, and how it supports your development workflow?
+If the Terraform state file in DynamoDB gets locked, what steps do you take to safely unlock it?
+Can you write a shell script that performs log rotation and system cleanup tasks?
+How does cache layering work when routing traffic across specific subnets or networks?
+What is the purpose of using multi-stage Dockerfiles, and how does Docker Compose fit into your container workflow?
+If you were asked to design a 3-tier application architecture on AWS, how would you approach it?
+How do you define persistent storage for Kubernetes pods, and what storage solutions have you used?
+
+Tech mahindra first round interview questions-
+
+What is the difference between a container and a pod in Kubernetes?
+Where do you store your Terraform state file, and how do you ensure it is locked so only one person can modify it at a time?
+What is the difference between Ansible and Terraform in terms of use cases and functionality?
+How do you restrict or control access to an S3 bucket?
+What are the differences between SNS and SQS, and when would you use each service?
+How do you establish connectivity between two VPCs?
+Can you write a Jenkinsfile that checks out code, builds a Spring Boot jar, creates a Docker image, and pushes it to ECR?
+What branching strategy does your team follow, and why?
+How does a Java application container communicate with a database container?
+Can you explain the different deployment strategies used in Kubernetes?
+What do you understand about Kubernetes probes (liveness, readiness, startup)?
+
+You mentioned migrating an application from public to private subnets. How and why did you perform this migration? Can you explain the steps involved?
+What issues did you encounter during or after migrating your application from public to private subnets?
+Did your organization use a multibranch pipeline? What was its purpose, and what problems did it help solve?
+What production issues have you resolved in Kubernetes, and is there a particular one you are especially proud of?
+If you joined our organization and were given a Load Balancer DNS that is not working, how would you begin troubleshooting? How would you identify where the application is deployed, and what steps would you take to resolve the issue once you find the deployment server?
+Our pipelines fail frequently, are triggered manually, and take a long time to complete. How would you approach diagnosing and resolving these problems?
+Based on your DevOps experience, what is one thing you really enjoy about DevOps and one thing you dislike? Please explain.
+Is there any task or initiative you implemented as a DevOps engineer that you are proud of and that significantly benefited your organization?
+An application pod has been running fine for a week, but suddenly it started crashing. What could be the possible reasons, and how would you troubleshoot and fix the issue?
+
+How do you implement monitoring for CI/CD pipelines?
+What metrics do you typically monitor in a CI/CD system, and how do you alert on failures?
+What is your understanding of Site Reliability Engineering (SRE)?
+How is SRE different from DevOps in terms of responsibilities, principles, and focus areas?
+If three services have already consumed 95% of their error budget and only 5% remains, what actions would you take as an SRE?
+How do you balance feature releases and stability when an error budget is nearly exhausted?
+Have you configured or implemented observability using OpenTelemetry? If yes, what components did you work with?
+Can you explain the architecture and data flow of an EFK (Elasticsearch, Fluentd, Kibana) logging stack?
+What are the steps involved in setting up EFK for Kubernetes workloads?
+Why do organizations use Argo CD over traditional CD tools? What problems does it solve?
+How does Argo CD enforce GitOps principles during deployments?
+What happens when manual changes are made directly in Kubernetes for resources managed by Argo CD?
+How does Argo CD detect and handle configuration drift between Git and the cluster?
+What is “Sync” in Argo CD, and when is it triggered?
+What is “Prune” in Argo CD, and why is it important in GitOps workflows?
+
+Daimler truck technical interview questions-
+
+what do you understand about tls handshake
+can you draw me an architectural diagram of your application which you worked in your previous organisation and explain me in detail
+what is forward and reverse proxy
+what do you do when the connection between front end container and back end container is not stable.. meaning it disables every time how do you provide a long term solution to this?
+how the traffic flows from browser to application hosted on eks?
+how is an api gateway and why do we use it
+can u draw me a diagram of branching strategy that your org followed and explain me?
+can you explain the troubleshooting you have done in your organisation in detail?
+
+Round 1: Deloitte questions I faced :
+
+CI/CD – Jenkins
+    
+How do you check logs and errors in a Jenkins build?
+How do you troubleshoot when Jenkins nodes or agents fail?
+How do you manage 100 microservices efficiently in Jenkins pipelines?
+How do you handle or avoid Jenkins bottlenecks during heavy workloads?
+What is a declarative pipeline in Jenkins?
+What is a scripted pipeline in Jenkins?
+How do you handle secrets in Jenkins?
+How do you achieve zero-downtime in CI/CD?
+
+Kubernetes
+    
+How do you troubleshoot IP conflicts in a Kubernetes cluster?
+During a rolling update in Kubernetes, what happens in the backend?
+What are readiness and liveness probes?
+
+AWS / S3
+    
+How do you migrate data in S3? (S3 → S3 migration)
+
+Terraform
+    
+What do you do when the Terraform state file gets corrupted?
+
+If your application has heavy load, how do you scale Jenkins? Do you use separate Jenkins agents?”
+
+Lti Mindtree interview questions for 4 yoe:
+
+How do you deploy python application on aws using jenkins pipeline
+How do your day starts and what activities you perform
+How do you upgrade your eks
+How do you handle when pod dies
+Your aws jenkins pipeline takes high time, how will you troubleshoot
+Create manifest for 2 nginx replicas
+Create a terrsform state file s3 bucket which expires within 30 days
+How do you provide security in docker
+
+Tesco first round of tech discussion -
+
+how would you migrate application from public subnet to private subnet?
+What is the security implementation that you have done in CICD as well as your application running on EKS?
+applocation hosted on ec2 is not able to connect to RDS how would you trouble shoot?
+write a bash script to give the status of all the pipelines in your organisation .. it should print success or failure.
+write terraform script to provision ec2 instance and a security group.
+how would u ensure ec2, s3, rds are used as per requirement ?
+lets say pod is went to crashloop back off how would u troubleshoot .. give detailed explanation?
+Write a docker file for python flask
+
+nterview Questions for Curriculum Associates 
+5-6 YOE
+
+List out your greatest achievement and projects in the last 6 months?
+
+Docker 
+How to optimize the Docker file?
+Difference between ADD and COPY?
+
+EC2
+A simple web application, and it's still in the U.S. state, so you're using maybe tomcat or apache server to host your application, which is running on the EC2
+You've got a page saying this application is down. We are not able to access the application. How do we investigate? Can you just walk me through?
+
+VPC and Networking
+When to use ALB vs NLB?
+If there are 15 VPC how to establish communications?
+What is the difference between NACL and Security Groups?
+Can you add security group to private subnet
+
+Terraform
+Write a terraform script to create an EC2 instance?
+Write a terraform script to add Security Group to VPC and Ec2 instance
+
+Avaya 
+1st Round(Manager + Technical)
+Day to Day work, experience in troubleshooting, provisioning platforms
+Azure, on prem, azure stack
+Keycloak, OIDC, Oauth2.0, JWT Tokens
+How are tokens generated when the authentication happens
+Services invoked for end to end user request
+Service mesh flow and architecture
+Terraform modules, vpc, ec2 instance provisioning code
+Shell script to extract line 10 from a log file and print its content( state 3 ways it can be done)
+CI/CD in depth, different environments, different constraints, staging pipelines, automation to deploy changes parallely across 20 environments , Rollback deployments
+Firewalls, ingress, vpcs, sgs
+Subnets, CIDR Ranges, Subnet masks
+Reusable modules you have actually written
+GitHub workflow, argocd
+Different ways to troubleshoot if a pod is failing
+Instance types and environment specific deployment, ASGs role in this
+Remote backend, Ansible
+ 
+Seclore screening round
+
+Experience in AWS and its services
+Security Group and NACL
+Ingress use and flow
+Load balancers in AWS
+Ansible play book and structure
+Scripting experience
+Public Private Subnet, VPCs
+Workspaces in terraform
+9.Daemon sets 
+TCS Interview questions
+
+Branching strategy
+You have pushed your changes onto remote repo and after one month you have to make few more changes onto your branch what things you will need to take into consideration also how can be this done via UI
+CI/CD flow in your project and your role in it
+How does webhook work for triggering a pipeline and how is it configured
+Scripting experience and explanation
+Kubernetes critical issue you resolved on your own
+Github runners
+
+Can you introduce yourself and give a brief overview of your professional background?
+What type of tasks have you automated using CI/CD, and what is your overall approach to designing a CI/CD pipeline?
+How do you plan and perform EKS cluster upgrades across multiple environments?
+Can you write a Terraform script to create an S3 bucket and a Lambda function that copies a ZIP file from that bucket?
+If you have one AWS account and need to create two S3 buckets using Terraform modules, how would you structure it?
+What is Terraform drift, and what does terraform plan do? How do you handle drift when it is detected?
+Can you write a bash script that clones a repository, searches for the infra folder, zips the config and YAML files, and uploads them to S3?
+What is the difference between * and & in Bash command execution?
+Can you write a Dockerfile for a Node.js application?
+You are using multi-stage Docker builds why are you using that approach? What benefits does it provide?
+What are the output artifact files generated when building Java and Node.js applications?
+What was your role in your previous organization were you leading a team or working as an individual contributor?
+
+
