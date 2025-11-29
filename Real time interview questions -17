@@ -1,1 +1,28 @@
+client - Intact green services
+exp < 5 yrs
+What is desired state and in-desired state?
+How do you deploy an application in Kubernetes?
+Have you faced any memory issue in Jenkins pipeline? how would you troubleshoot
+There are 2 VPCs A & B. Give me options so that A communicate to B and vice versa. Also, option where only A has to communicate to B.
+2 Instances are created using terraform. Statefile is located locally and also in remote backend(S3). If a user deletes 1 instance what would happen? How would you handle this?
+There is issue with docker image due to its size, what are the action plans from you to reduce the size.
+What are the tools you have used for CI/CD pipeline?
+Can we use POD as an agent? What are the drawbacks if we do so?
+Type of services in Kubernetes, give their use case
+What are the different type of Jenkins pipeline?
+What are the advantages of multibranch pipeline?
+You are unable to push docker image to dockerhub due to access issue. What are the sources where you can push your docker image other than dockerhub?
 
+Explain the high availability architecture for Monolith application
+If you are deploying it in multiple regions how will you do it ?
+If you segregate the tech stack and deployed in multiple regions how will you ensure data from database are in sync in all deployed regions?
+Difference between daemon set and replica set?
+What are way to providing access to s3 bucket other then giving IAM access?
+If you have multiple teams are using Kubernetes with respective namespaces, how will you make that they have access to only specific namespaces
+If you are deploying application in eks from CD then how will you attach the eks cluster information to CD/pipeline.
+
+Kubernetes Questions I experienced in DevOps interviews in last month
+1) Why is it that master nodes are 3,5,7 in number - why odd numbers only
+1.1) If One master node is taken down for upgrade - how can 2 master nodes manage the cluster
+2) Procedure for doing an upgrade on a master node and worker node
+3) what happens if etcd is corrupted ? best practices for etcd backup.
