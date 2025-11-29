@@ -1,1 +1,74 @@
 
+Gemini company interview questions
+
+What is Terraform drift?
+    
+Difference between COPY and ADD commands in a Dockerfile.
+If a Docker image becomes very large with many layers, what steps would you take to reduce its size?
+If you have 10 layers in a Dockerfile and layer 6 fails, after fixing it, where will the rebuild start from and why?
+Difference between bind mounts and volumes in Docker.
+Why do we need a StatefulSet when we can attach a PVC to a Deployment and make it stateful?
+If a pod is created with a Deployment and another with a StatefulSet, will the StatefulSet pod always remain on the same node?
+If we can run MySQL with a Deployment and PVC, why do we need a StatefulSet?
+What happens if we scale a Deployment with one PVC from 1 to 3 replicas?
+What types of services exist in Kubernetes, apart from ClusterIP, NodePort, and LoadBalancer?
+Why does a pod created from a Deployment have two sets of random characters in its name?
+
+interview questions for Mphasis
+
+What is AWS Lambda and how do you design a serverless application?
+What is the difference between terraform plan and terraform apply?
+What are your roles and responsibilities in your current project?
+Can you explain your end-to-end project?
+What AWS resources have you created using Terraform and how do you promote a read replica to primary using Terraform?
+In Terraform, which parameter or code change is needed to make a read replica the primary?
+What is a 3-tier architecture?
+Which components or resources are required to create a 3-tier architecture using Terraform?
+If the RDS is in a private subnet, how do you access it securely without using public tools like MySQL
+Explain your end-to-end CI/CD pipeline in your current project
+Explain a simple CI/CD pipeline in short.
+Show a sample Jenkins CI/CD pipeline code.
+Explain if a standalone Jenkins server setup will work, and what to consider.
+Explain what an application pipeline is.
+
+How many ways can you trigger a Jenkins pipeline?
+
+Capegemni interview questions
+
+What is the difference between NAT Gateway and IGW?
+    
+If your pod is in Pending state, then what are your troubleshoot steps?
+Can you tell me the difference between secondary RDS and read-only RDS?
+So have you built the RDS of your own or you have managed it only?
+You have RDS and tomorrow, I being your client, will tell you that you need to make the configuration in such a way so that only one user can access the RDS at a time. How will you configure that?
+Like where I will set up the RDS, is it?
+To upgrade the version of DB in RDS, suppose you have 7.0 MySQL installed, and you want to upgrade it into 8.0 and above. What is the process?
+In a multi-account environment, if the resources are residing in one account and the users are in different accounts, how will you configure so that the user can access the resources?
+Because you are telling it from the IAM perspective, what about the VPC?
+You have an EC2 instance and you would like to migrate it from one region to another. How will you do it?
+You want to create an EC2, and while creating the instance, you are getting an error like IP address exceeded. How will you troubleshoot and fix it?
+That we can extend the subnet CIDR once it is created?
+Once you create that subnet, the instance will get created, but will it be able to communicate with the old instances?
+Asking different provisioners,
+How will I remove state file from locking?
+Suppose you have created an EC2 instance by logging into the AWS console. And now you would like to manage it using Terraform. How shall you do it?
+…resources in Terraform
+Different types of services in Kubernetes.
+In a multi-cloud environment, if you want to block a pod to go into a particular node, how would you do it?
+PVC.
+If we can use terraform import for existing AWS resources which are not created by Terraform, then what is the use of data source?
+
+Interview questions persistance
+
+With respect to DevOps, to set the CI/CD pipeline, which tools and services have you used?
+    
+Do you have experience with AWS DevOps services like CodeDeploy, CodeBuild, and CodePipeline? How would you set up a pipeline using them?
+Do you have experience with GitHub Actions? Suppose I want to build and test a Java Maven application and create an artifact, what steps would you include?
+Where do you keep the GitHub Actions workflow file, and how do you upload a JAR artifact?
+You said you configured SonarQube. What does SonarQube do?
+Which version of SonarQube have you used — Community, Developer, Enterprise, or SonarCloud?
+How did you integrate SonarQube with Jenkins?
+In your project, what was the application language you scanned with SonarQube?
+How do you set up quality gates in SonarQube?
+What things have you done in Jenkins?
+Can you write a Jenkinsfile for a Node.js application to build, push Docker image, and deploy to Kubernetes? Please also explain it in detail.
