@@ -1,1 +1,37 @@
 
+How do you display the last 10 lines of a large log file without opening it fully?
+In Kubernetes, how would you configure your deployment to double CPU allocation once usage crosses 70%?
+Can you write a basic Dockerfile for your application?
+What top-level security risks from OWASP do you usually check for?
+How do you configure Prometheus and Grafana for monitoring?
+If you have an on-prem application, how would you migrate and deploy it in a cloud-native environment?
+Can you explain Docker Compose and how it helps in multi-container application deployments?
+
+LTIMindtree Interview Question:
+Role:- Azure Devops Engineer
+1st Round: Ibot
+What branching strategies have you used in projects and how they work?
+Write a PowerShell script to perform a backup from a server.
+Have you used Azure Boards in your project? How did you integrate it with Azure Pipelines to show build/deployment details?
+After deployment, if the production environment is not responding, how do you troubleshoot? Explain step by step.
+How do you perform security scans in your Azure Pipelines?
+Explain the different stages involved in your deployment pipeline.
+What is the difference between Service Connection and Service Principal?
+
+2nd Round: L1 
+How do you manage repetitive tasks in your Azure Pipelines for build and deployment?
+What are the different deployment strategies followed in Azure Pipelines?
+For a Java application code, what command would you use in your Dockerfile ENTRYPOINT?
+What is Tiller in Helm?
+Why is the Library used in Azure Pipelines?
+What are Service Hooks in Azure DevOps?
+What is the difference between template and extends in Azure Pipeline YAML?
+What is Sentinel in Terraform?
+
+3rd Round: L2
+Explain the Helm workflow (from adding a repo to installing a chart).
+What are Managed Identities in Azure and how do you configure them?
+How do you configure pre-deployment and on-failure tasks in Azure Pipelines?
+What command is used to log in to a Kubernetes cluster?
+What is the null operator in Python?
+Write a Python script to print the Fibonacci series?
