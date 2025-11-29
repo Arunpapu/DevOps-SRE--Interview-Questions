@@ -1,1 +1,66 @@
+Deloitte DevOps Interview Questions– ©Copied! Round 1 – Technical Screening & Troubleshooting
 
+ Target Roles: DevOps Engineer, SRE, Cloud Engineer
+
+Describe a situation where you had to troubleshoot a technical issue under a tight deadline. What methodology did you follow?
+
+Scenario: “Your CI build fails with ‘dependency not found.’ Outline your investigation steps.”
+
+You notice intermittent 502 errors during canary deployment. How will you identify the root cause?
+
+CI/CD pipeline takes 40+ minutes. What optimizations would you apply?
+
+System Design & Architecture
+
+Design a highly available logging/monitoring system for 100+ microservices across 3 regions.
+
+How would you implement secure secret rotation (e.g., in Azure DevOps pipelines)?
+
+Your production AKS cluster is failing health checks randomly — how do you debug?
+
+Explain a rollback plan for a Kubernetes deployment using Terraform.
+
+How do you handle zero-downtime schema migrations for a stateful database?
+
+Design a cost-efficient nightly-reporting pipeline with 3-year log retention.
+
+Incident Response & On-the-Spot Thinking
+
+An Azure function is being throttled. How do you detect and mitigate it?
+
+You receive intermittent DNS resolution failures in cloud infra—what could be wrong?
+
+A critical end-user reports 10 sec latency spikes periodically — how do you root cause it?
+
+One pod shows high CPU usage without logs—what's your next step?
+
+Artifact uploads from Jenkins randomly fail—which layers do you investigate?
+
+
+Managerial & Behavioral
+
+Tell me about a time you resolved a production incident with stakeholder pressure.
+
+How do you prioritize when critical alerts pop up during an ongoing release?
+
+Describe conflict resolution when working with distributed Dev and Ops teams.
+
+Have you ever decided not to automate something? Explain your trade-offs.
+
+What drives you to continue learning in cloud-native technologies?
+
+company --Amadeus Labs
+Exp-5yr SRE
+
+How to fix pod-level autoscaling not happening, what will be your approach .
+suppose we have application configured with hpa where it was running fine but suddenly it is not running what will be your approach?
+How to access application if Ingress is configured but not accessible to end users, how you will resolve ?
+How Kubernetes handles service discovery can you explain .
+How to ensure all five application teams don't use more than a particular amount of space?
+Leap second in Linux
+what type of autmation you have done in k8
+Tell what type of aumatation you have done that saved time in your project .
+11 . Can pod be scheduled if have below security constent .
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 0
