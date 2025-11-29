@@ -27,7 +27,10 @@ EPAM DevOps Interview Questions Part-1
 25. How do you enforce compliance and auditability in your CI/CD processes across global regions (e.g., GDPR, HIPAA)?
 26. What's your strategy for managing container image security across all stages of a DevOps pipeline?
 27. How would you integrate runtime threat detection in Kubernetes using tools like Falco or Sysdig?
-
+Diff between replica set vs replication controller
+K8s backup policies
+How do you handle deployment failures
+What happens if master node fails suddenly
 
 
 Attend interview at a Startup F2F
