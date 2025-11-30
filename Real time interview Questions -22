@@ -1,1 +1,71 @@
+How does the product URL work in an e-commerce website?
+How does the request route to a specific microservice, like /clothes?
+How many worker nodes do you use and how do you manage scaling?
+How do deployments happen in EKS and how do you manage your clusters and microservices?
+How does Jenkins authenticate to AWS when running Terraform?
+What are Terraform provisioners and when do we use them?
+What are Terraform meta-arguments?
+What are dynamic blocks in Terraform?
+What are the different Kubernetes service types?
+How do you configure Kubernetes health checks for pods?
+What is the difference between ADD and COPY in Docker?
+When do you use CMD vs ENTRYPOINT in Docker?
+How do you explain your entire e-commerce project setup?
+What server sizes and instance types are used in your project?
+Why do we need autoscaling for both nodes and pods?
+How do you handle Helm charts?
+
+Python program to check a prime no
+Shell script to append some data into existing file
+How can we run ansible playbook in background
+Write terraform code to provision an EC2 instance
+Readiness/Liveness probe
+HPA/VPA. Which is preferred and why. Use case
+How can you ensure only one particular pod runs on one node
+Taints and tolerations
+Static pod in Kubernetes
+Set resource constraints at namespace level
+Node scaling, ASG scaling
+Swap memory in Linux
+$? Meaning
+chmod permissions
+EBS, EFS, S3(latency, cost, usecase)
+Vpc peering and nat gateway
+Lambda function running in public subnet. It should connect to S3 over private internet
+Serverless services provided by AWS and their use case
+Provisioners and their use case
+Workspaces and modules
+How did you setup remote backend and state locking
+Life cycle blocks
+Manually changed a resource what will happen
+Data blocks in terraform
+User requirement is to divert traffic in Mumbai region only. How will you achieve?
+How will you List out all the open ports
+
+Lloyds Interview questions 
+
+While upgrading if we issue with related to PDB how can it be managed
+
+Write a docker compose application for a application involving entire backend and frontend
+
+While upgrading kubernetes cluster how do you take care of SLA
+
+How can you do the migration of monolithic application to kubernetes cluster
+
+What is APM and monitoring tool. Is Grafana a APM tool
+
+How can you make the application HA in kubernetes 
+
+Write a shell script which generates a report in pdf/image for a cluster health check. It has 3-4 clusters. 8-10 node pools. And 20 nodes. Generate a report
+
+Difference between Add and Copy command
+
+How would you manage networking and access part for Kubernetes 
+
+Difference between continuous delivery and continuous deployment 
+
+Node affinity 
+
+Standard change and normal change
+
 
