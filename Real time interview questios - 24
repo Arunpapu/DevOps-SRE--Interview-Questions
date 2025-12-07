@@ -1,1 +1,40 @@
+Avaya 2nd technical round
+
+What kind of terraform drifts have you worked on
+How do you handle provider versions, drawbacks of upgrading providers
+Best practices to write modules
+How do you follow versioning with modules
+How do you handle the terraform code deploying via CI/CD
+A resource value was updated manually, how can you match that value in state file without updating terraform code
+What kind of resources you have deployed using terraform. Detailed discussion on that
+How do you handle dependency part for the resources
+How would you setup a python project from scratch
+What is python virtual environment how would you set up
+How do you use secrets in Kubernetes. How do you mount them, vault integration
+How can you use AI into your workflows or into your CI/CD workflows
+GitHub workflows, Argo CD
+Keycloak and IDP
+How can you implement Oauth 2.0 framework
+Service mesh and Istio
+Major Kubernetes issue you have worked on and end to end steps you followed
+How do you manage the Kubernetes deployments and more questions on helm
+How would you mitigate CVE, what tools can be used, after finding steps what steps can you take to mitigate the CVE
+Have you implemented load balancers
+Experience in Networking, DNS
+Experience on GCP, on prem, azure stack
+What kinds of code you have written in python
+
+Seclore 4th round questions 
+
+1.Discussion around projects , roles and responsibilities, exposure to services 
+How would you automate a task to delete unused resources every Sunday
+Automation to delete unused EBS volumes
+Requirement gathering for an automation task related to SSP portal. Approach and design end to end solution
+You deployed a service via helm but pod is in container creating state
+When it is not recommended to use Ansible
+When would you use Python, Bash, Terraform. Scenarios for each case
+Write a python program which connects to a server, goes to path /home/app inside this 
+there can be n no files like appa.log, appb.log. Traverse through them and count the no of errors and exceptions
+in these files and print it in a tabular format
+
 
