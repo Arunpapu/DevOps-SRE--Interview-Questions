@@ -180,4 +180,6 @@ Added pre-deployment integration tests in a staging environment to catch such co
 Implemented alerting on pod CrashLoopBackOff via Azure Monitor / Prometheus so any future failures trigger immediate notifications
 
 24. Have u done any migration form on-premis to azure / from azure to azure with any scenarion and what shot of migrarion s it resource migration or data migration 
-25.what are the prechecks u have to consider before migration
+25.what are the prechecks u have to consider before migration ? (Check CPU, memory, storage requirements, Ensure network connectivity between source and target,
+Check available disk space, )
+
