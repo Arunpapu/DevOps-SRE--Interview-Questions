@@ -1,5 +1,5 @@
 Docker:
-I can able to get access application from outside container but from inside getting packet loss. How do you trobleshoot.
+I can able to get access application from outside container but from inside getting packet loss. How do you trobleshoot. ( Issue related to container networking , firewall rules, DNS)
 How do you get logs from docker level.
 Two containers are there. One with front end application and second container has db.Fisrt I want to start db then front end. What should you do?( 2tier application)
 
