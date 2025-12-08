@@ -1,14 +1,25 @@
 Docker:
 I can able to get access application from outside container but from inside getting packet loss. How do you trobleshoot. ( Issue related to container networking , firewall rules, DNS)
-How do you get logs from docker level.
+How do you get logs from docker level. ( By running command - docker logs container id.) 
 Two containers are there. One with front end application and second container has db.Fisrt I want to start db then front end. What should you do?( 2tier application)
 
 Kubernetes:
-How do you call pod1 to pod2 without service.
-2.what is Container Network Interface
-3.what is CSI driver
-4.Static volume provisioning and dynamic volume provisioning. Explain in with use case.
-5.what is auto volume expansion.
+How do you call pod1 to pod2 without service. ( Using pod ip directly ,http://<pod2-ip>:<port>, to get pod 2 ip - docker get pods -o -wide) 
+
+2.what is Container Network Interface ? (Assigning an IP address to a container, Every container/pod needs its own network interface and IP.
+CNI handles:IP allocation & Interface creation)
+
+3.what is CSI driver? (A CSI Driver (Container Storage Interface Driver) is a standard plugin that allows Kubernetes (and other container orchestration systems) 
+to connect to external storage systems such as: AWS EBS , NFS etc)
+
+4.Static volume provisioning and dynamic volume provisioning. Explain in with use case. (the admin manually create the PersistentVolume (PV) before a workload uses it.
+USE Case (Pre-existing NFS, iSCSI, SAN storage, Migration from legacy systems, When storage must be manually controlled)
+
+Dynamic volume provisioning -( We create only a PersistentVolume Claim (PVC).
+Use Cases :Cloud storage (AWS EBS, GCP PD, Azure Disk), Highly scalable workloads, On-demand volumes
+
+5.what is auto volume expansion. (Auto Volume Expansion = Automatically grow your storage when PVC size increases.
+It is a Kubernetes feature that allows a PersistentVolumeClaim (PVC) to automatically increase its storage size without recreating the PVC or restarting the Pod.)
 
 what is land job activity in migration
 2.what type of basic azure services u will consider 
