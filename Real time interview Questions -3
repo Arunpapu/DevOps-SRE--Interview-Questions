@@ -38,30 +38,146 @@ and production pipelines include automated rollback and monitoring.”
 
 8. How about the deployment , IAAS model or Saas  model ? (IAAS Model - You get virtualized infrastructure (VMs, storage, network) and are responsible 
 for installing, configuring, and managing the OS, runtime, and applications.
+Examples:
 AWS EC2
 Azure VMs
 Google Compute Engine
 
-Examples:
+9.pick one requirement and u deployed end to end by using azure services ?
+Requirement: (“Deploy a web application with a backend database, make it scalable, and ensure CI/CD automation.”)
 
-9.pick one requirement and u deployed end to end by using azure services 
-10. suppose there is a dotnet application which is basically a 3 -tier application ,for webapi deploymment i hvae used azure appservices, for background jobs i have used function apps ,and for messaging i have used servicebus and how about the connectivity to all thses?
+1️⃣ Code Repository & CI/CD
+Service: Aws DevOps / GitHub
+Usage: Store source code, manage branches
+Pipeline:
+Build Pipeline: Compile code, run unit tests, create Docker image
+Release Pipeline: Deploy Docker image to Azure Kubernetes Service
+
+2️⃣ Containerization
+Service: Docker + Azure Container Registry (ACR)
+Usage:
+Build Docker image of the web app
+Push image to ACR for secure storage
+
+3️⃣ Orchestration / Compute
+Service: Azure Kubernetes Service (AKS)
+Usage:
+Deploy frontend and backend as pods
+Use Deployments and ReplicaSets for scalability
+Manage container networking
+
+4️⃣ Database
+Service: Azure SQL Database (or Cosmos DB for NoSQL)
+Usage:
+Managed database with high availability
+Connect backend services via environment variables / secrets
+
+5️⃣ Networking & Security
+Services:
+Azure Load Balancer or Application Gateway for web traffic
+Azure Virtual Network (VNet) for secure internal communication
+Azure Key Vault for storing secrets and connection strings
+
+6️⃣ Monitoring & Logging
+Services:
+Azure Monitor & Log Analytics → monitor pods, DB, and app health
+Application Insights → track web app performance and errors
+
+7️⃣ Auto-scaling
+Service: AKS Cluster Autoscaler + Horizontal Pod Autoscaler
+Usage:
+Scale pods automatically based on CPU/memory usage
+Scale nodes in AKS dynamically
+
+8️⃣ CI/CD Trigger
+On every code commit:
+Build Docker image → push to ACR
+Release pipeline deploys new image to AKS
+Automated tests run on QA/UAT environment before production
+
+
+10. suppose there is a dotnet application which is basically a 3 -tier application ,for webapi deploymment 
+i hvae used azure appservices, for background jobs i have used function apps ,and for messaging i have used servicebus and how about the connectivity to all thses?
+
 11.how on-premisis user has to access the application/access the code which was deployed in cloud service . how my connectivity will be configured ( on-premiss to cloud )
+
 12.IN general as azure specalist from ur side what is ur recomendation is it a sit-to-site vpn or Expressroute
-13.lets assume consider banking sector only i dont have that much budget but since ur telling that for low budget go for site-to-site-vpn but on otherside ur saying that express-route is more secure > So how cn u justy that, because banking costumer has a limitation for him
-14.IN which senario we will go for site-to-site vpn  and Expressroute 
+
+13.lets assume consider banking sector only i dont have that much budget but since ur telling that for low budget go for site-to-site-vpn 
+but on otherside ur saying that express-route is more secure > So how can u justy that, because banking costumer has a limitation for him
+
+14.IN which senario we will go for site-to-site vpn  and Expressroute ?
+Site-to-Site VPN - (A Site-to-Site VPN connects your on-premises network to AWS over the public Internet using an IPsec VPN tunnel)
+Use Cases
+Quick, low-cost connectivity to AWS
+Non-latency-sensitive workloads
+Backup, development, or test environments
+Small-scale production workloads where moderate bandwidth is enough
+
+ExpressRoute:
+ExpressRoute provides a private, dedicated connection between your on-premises network and Azure, bypassing the Internet.
+Use Cases
+Mission-critical production workloads
+High-performance applications (ERP, databases, SAP, SAP HANA)
+
 15.any storage related components have u worked on?
+
 16. lets say i have a condition i need to access the data which is stored in storage account but that is huge data which is comming from enduser perspective lets say some cppotency that is recording 24/7 and data will be stored but at the same time if anyone comes and to retrieve the data obviously they will get it from storage account,now i need to implement some cost optimisation techniques on storage account to reduce cose because data to be incresed daytoday ?whta afre the possible ways 
 with respective storageaccount
-16.suppose u have created a storage accouunt with hot-tier is it possible to change to cool-tier
-17. manually we can change from hottier to cool tier ,but when i have huge data it will take time right .
+
+16.suppose u have created a storage accouunt with hot-tier is it possible to change to cool-tier ( Yes, we can, from standard to Glacier and other storage class as well using
+routing policies)
+
+17. manually we can change from hottier to cool tier ,but when i have huge data it will take time right .\
+
 18.Did u face  any challenges while ur taking backup? any issues 
-19. what type of services ur have used for backup .is it azure specific or any on-premisis
+
+19. what type of services ur have used for backup .is it azure specific or any on-premisis? 
+AWS Backup
+Purpose: Centralized backup service for AWS resources.
+Services Covered:
+EC2 volumes (EBS snapshots)
+RDS databases
+DynamoDB tables
+EFS file systems
+
 20.what are the senarios u configured for DR?
-21.how about the monitoring techniques like any alerts we can 
-22.lets assume we got an requirement that we have a production infra running on azure cloud and we need to setup an alert mechanism where there some thresold values given by customers but considering huge infra but ur getting hundreds of alerts ,in that alert how can u segregate  that we need to findout ,which alert we need to proporitise ,any appriach u have ?
+
+21.how about the monitoring techniques like any alerts we can ?
+Tools / Services:
+AWS: CloudWatch, CloudTrail, VPC Flow Logs
+On-Premises: Nagios, Zabbix, Prometheus, Grafana
+Metrics to monitor: CPU, memory, disk, network bandwidth, uptime
+
+22.lets assume we got an requirement that we have a production infra running on azure cloud and we need to setup an alert mechanism where there 
+some thresold values given by customers but considering huge infra but ur getting hundreds of alerts ,in that alert how can u segregate  
+that we need to findout ,which alert we need to proporitise ,any appriach u have ?
 
 23.Any known issues u encountered any pipeline is integrated/ any production code is ur pushing or production any known issue and tell which is critical and how u got resolved 
+1️⃣ Issue Encountered
+During production deployment, one of the services failed to start after the new container image was deployed.
+Error observed: CrashLoopBackOff in Kubernetes pods.
+Logs showed missing environment variables and database connection timeout.
+Impact: Service downtime, affected 10% of production traffic, critical for user-facing functionality.
+
+2️⃣ Analysis & Root Cause
+Root cause analysis included:
+Reviewing Kubernetes pod logs and events
+Checking pipeline logs and deployment scripts
+Validating ConfigMaps and Secrets
+Found that:
+A new environment variable required by the service was missing in production ConfigMap.
+Deployment pipeline did not validate presence of required secrets/configs before pushing.
+
+3️⃣ Resolution
+
+Immediate Fix:
+Added the missing environment variable in production ConfigMap
+Redeployed the pods → service came up successfully
+Preventive Measures:
+Updated the CI/CD pipeline to validate required environment variables and secrets before deployment
+Added pre-deployment integration tests in a staging environment to catch such configuration issues
+Implemented alerting on pod CrashLoopBackOff via Azure Monitor / Prometheus so any future failures trigger immediate notifications
 
 24. Have u done any migration form on-premis to azure / from azure to azure with any scenarion and what shot of migrarion s it resource migration or data migration 
 25.what are the prechecks u have to consider before migration
