@@ -21,13 +21,29 @@ Use Cases :Cloud storage (AWS EBS, GCP PD, Azure Disk), Highly scalable workload
 5.what is auto volume expansion. (Auto Volume Expansion = Automatically grow your storage when PVC size increases.
 It is a Kubernetes feature that allows a PersistentVolumeClaim (PVC) to automatically increase its storage size without recreating the PVC or restarting the Pod.)
 
-what is land job activity in migration
-2.what type of basic azure services u will consider 
+what is land job activity in migration ? (A scheduled activity that loads (or lands) data from the source system into a temporary/staging layer in the target environment.)
+
+2.what type of basic azure services u will consider ?
+
 4.Hub and Spoke topology 
+
 5.day to day actives what type of work ur doing is it a support/project 
-6.what type of pipelines ur handling basically it means QA ,UAT 
+
+6.what type of pipelines ur handling basically it means QA ,UAT ? (I work with end-to-end CI/CD pipelines across multiple environments — DEV, QA, UAT, Staging, and Production.
+The pipelines include building the application, containerizing it, running automated tests, scanning for vulnerabilities, and deploying to Kubernetes.
+QA pipelines run integration and regression tests, UAT pipelines involve manual approvals for stakeholder validation, 
+and production pipelines include automated rollback and monitoring.”
+
 7. how many team members are there?
-8. How about the deployment , IAAS model or Saas  model
+
+8. How about the deployment , IAAS model or Saas  model ? (IAAS Model - You get virtualized infrastructure (VMs, storage, network) and are responsible 
+for installing, configuring, and managing the OS, runtime, and applications.
+AWS EC2
+Azure VMs
+Google Compute Engine
+
+Examples:
+
 9.pick one requirement and u deployed end to end by using azure services 
 10. suppose there is a dotnet application which is basically a 3 -tier application ,for webapi deploymment i hvae used azure appservices, for background jobs i have used function apps ,and for messaging i have used servicebus and how about the connectivity to all thses?
 11.how on-premisis user has to access the application/access the code which was deployed in cloud service . how my connectivity will be configured ( on-premiss to cloud )
