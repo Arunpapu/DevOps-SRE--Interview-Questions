@@ -100,6 +100,13 @@ Automated tests run on QA/UAT environment before production
 i hvae used azure appservices, for background jobs i have used function apps ,and for messaging i have used servicebus and how about the connectivity to all thses?
 
 11.how on-premisis user has to access the application/access the code which was deployed in cloud service . how my connectivity will be configured ( on-premiss to cloud )
+? 
+-> on‑premises environment needs secure access to applications or code deployed in the cloud)
+On‑prem users connect via HTTPS (or other protocols) over the internet to the cloud service endpoint.
+Configuration:
+Expose the application with a public DNS name.
+Secure with TLS/SSL certificates.
+Use authentication (OAuth, SAML, or cloud IAM) & VPN
 
 12.IN general as azure specalist from ur side what is ur recomendation is it a sit-to-site vpn or Expressroute
 
