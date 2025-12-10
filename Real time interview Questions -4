@@ -57,20 +57,41 @@ In short—Terraform will override the manual changes and restore the desired st
 
 11. Suppose you're running an application and a vulnerability occurs, how would you handle it? Briefly explain.
 
+Ans. (I would first assess the vulnerability, then immediately contain the risk by isolating the affected component. Next, 
+I patch or update the system, rebuild and redeploy the fixed version, and verify through rescanning. Finally, 
+I document the incident and strengthen pipelines and security policies to prevent recurrence.”)
+
 12. If it's a production server and you encounter a vulnerability, what will you do?
+
+Ans. (For a production vulnerability, I first assess severity and immediately contain the risk using temporary controls like FW rules
+or isolating components. I follow the incident response process, patch or update through a safe deployment method 
+(blue-green/rolling), verify via rescanning, and monitor afterwards.
+Finally, I document the RCA and improve preventive security checks.”)
+
 13. If it’s a Python application and a vulnerability is found in production and fixing it may take 6 months, 
 what is your approach and solution?
-14. Are you following any standards to handle such issues?
+14. Are you following any standards to handle such issues? ( We strictly follow ITIL Process)
 15. Have you worked with Ansible?
 16. What is Ansible?
 17. Can you write a playbook?
-18. How do you store credentials in Ansible?
+
+18. How do you store credentials in Ansible? ( Ansible vault)
+
 19. Are you following any other approach to store secret credentials securely?
 20. How do you store variables in Ansible?
 21. How do you debug errors in an Ansible playbook, what is the comamand ?
 22. Suppose you want to execute a single command without writing a playbook — what is the command, and how do you write it?
 23. What modules have you worked with in Ansible? List their names.
+
 24. How do you deploy your application on AWS? What services do you use?
+
+Ans. I deploy applications on AWS using a CI/CD pipeline (CodePipeline or GitHub Actions). 
+I package the application and store it in ECR or S3. Based on application type, 
+I deploy either on ECS Fargate, EKS, EC2, Lambda, or Elastic Beanstalk. 
+I use VPC, ALB, Auto Scaling, RDS/DynamoDB, Secrets Manager, 
+and CloudWatch for security and observability.
+Everything is automated using Terraform, and deployments follow Blue/Green or rolling update strategies.”
+
 25. When deploying your application to Amazon EKS, what other services do you use along with it?
 26. Have you worked with shell scripting and Python scripting?
 27. Where have you used Python in your work? What was the purpose, and what tasks did you perform?
@@ -80,17 +101,72 @@ Encora interview questions - 2nd Round                                          
 2.i had created an resource manually, how to do you implement it through terraform
 3.for each and count difference, provide examples in terraform
 4.how do you create an module and how do you refer it in terraform
+
 5.how to handle peak traffic after an launch of new product in web app
-6.there are multiple micro services and multiple websites, I want to ensure security how do you handle it
+
+Ans. To handle peak traffic after launching a new product, I use horizontal auto-scaling, load balancing. 
+
+6.there are multiple micro services and multiple websites, I want to ensure security how do you handle it 
+
+Ans. ( Through Security groups, Web Application firewall, IAM.VPN etc)
+
 7.what is CSI drivers
+
+Ans. (A CSI driver is a Container Storage Interface driver that connects Kubernetes with external storage systems)
+Kubernetes uses CSI drivers for cloud storage like AWS EBS, Azure Disk, and GCP PD. CSI standardizes storage and
+lets vendors release new features without modifying Kubernetes.”
+Kubernetes → Calls CSI driver → Creates disk → Attaches → Mounts to pod.
+
 8.what is helm template and helm install
 9.what is helpers files in helm
 10.how do you rotate the secrets in key vault and implement .pfx certificate in application gateway , along with ingress/controller in AKS
+
 11.architecture of Kubernetes 
+
+Ans. ( 1 cluster having 1 master node (Kubeapi, kube scheduler, kube controller, etcd) & Child node ( Kubelet, kube proxy, container engine)
+
 12.what is Service principle in azure – provide an example 
 13.there is an backend API, I want securely communicate with other, how do you implement it
+
 14.what is daemonset and statefulset 
+
+Ans. (A DaemonSet ensures that one pod runs on every node)
+DaemonSet
+“DaemonSet runs one pod per node and is used for node-level services like logging and monitoring agents.”
+
+StatefulSet
+“StatefulSet manages stateful applications that require persistent storage, stable identity, and ordered deployments, such as databases.”
+DaemonSet = 1 per node
+StatefulSet = stable pods + stable storage
+
 15.am having an range of ip address 10.0.0.0/16 , I want to have 10.0.0.0/21 subnets , how will I achieve it terraform , how do use locals word and achieve it
 16.crashloopbackoff – what are the setps you will follow to troubleshoot further
 17.what are the branching strategies and pipeline creation mechanism 
 18.what are the files present inside helm chart 19.what is CNI plugin
+
+Ans.
+Helm File structure:
+mychart/
+│── Chart.yaml
+│── values.yaml
+│── charts/
+│── templates/
+│     ├── deployment.yaml
+│     ├── service.yaml
+│     ├── ingress.yaml
+│     ├── _helpers.tpl
+│     └── NOTES.txt
+└── .helmignore
+
+CNI = Container Network Interface
+
+A CNI plugin is a networking component that Kubernetes uses to provide networking capabilities to pods.
+
+Why do we need CNI?
+
+Kubernetes does not provide networking by itself.
+It depends on external CNI plugins to:
+Assign IP addresses to pods
+Manage routing
+Implement network policies
+Provide cluster networking
