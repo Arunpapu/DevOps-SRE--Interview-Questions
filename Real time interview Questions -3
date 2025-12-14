@@ -133,7 +133,7 @@ High-performance applications (ERP, databases, SAP, SAP HANA)
 with respective storageaccount
 
 16.suppose u have created a storage accouunt with hot-tier is it possible to change to cool-tier ( Yes, we can, from standard to Glacier and other storage class as well using
-routing policies)
+life cycle management policies)
 
 17. manually we can change from hottier to cool tier ,but when i have huge data it will take time right .\
 
