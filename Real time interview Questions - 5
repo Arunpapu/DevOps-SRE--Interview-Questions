@@ -4,6 +4,25 @@ Deloitte DevOps Interview Questions– ©Copied! Round 1 – Technical Screening
 
 Describe a situation where you had to troubleshoot a technical issue under a tight deadline. What methodology did you follow?
 
+Ans. During a production deployment, our application suddenly started returning 5xx errors for users. 
+This happened close to a business-critical release window, 
+and the issue had to be resolved within minutes to avoid customer impact.
+
+My task was to idenfify the root cause quickly:
+Steps:
+Immediately checked monitoring dashboards (CPU, memory, error rate, latency).
+Put the deployment on hold to prevent further impact.
+Checked application and container logs.
+Verified health checks and dependencies (DB, cache, external APIs).
+
+Issue Observed:
+Found a misconfigured environment variable introduced during deployment, causing the service to fail on startup.
+Confirmed by replicating the issue in a staging pod.
+
+Solution:
+Rolled back to the previous stable version using the CI/CD rollback mechanism.
+Verified that error rates dropped to zero and traffic normalized.
+
 Scenario: “Your CI build fails with ‘dependency not found.’ Outline your investigation steps.”
 
 You notice intermittent 502 errors during canary deployment. How will you identify the root cause?
@@ -18,7 +37,31 @@ How would you implement secure secret rotation (e.g., in Azure DevOps pipelines)
 
 Your production AKS cluster is failing health checks randomly — how do you debug?
 
+Ans. Identify what health check is failing:
+Clarify whether it’s:
+Azure Load Balancer / Application Gateway / Ingress
+Kubernetes readiness probe
+Liveness probe
+Node health (NotReady)
+AKS control-plane signal
+
+kubectl get pods -A
+kubectl describe pod <pod>
+kubectl get nodes
+kubectl describe node <node>
+
+Are failures pod-specific, node-specific, or zone-specific?
+
+“I debug random AKS health-check failures by first stabilizing traffic, identifying which health signal is failing, 
+correlating failures with nodes, pods, and time, checking probes, resource pressure, node health, and networking. 
+I fix probe tuning, scaling, or infra issues, validate recovery, and add monitoring to prevent recurrence.”
+
 Explain a rollback plan for a Kubernetes deployment using Terraform.
+
+Ans. For Kubernetes deployments managed with Terraform, I perform fast rollbacks using Helm or Kubernetes rollout undo, 
+then align Terraform state by reverting code or variables and reapplying. Infrastructure rollbacks are handled 
+by reverting Terraform code in Git. 
+I rely on canary/blue-green deployments and remote state locking to ensure safe, repeatable rollbacks.”
 
 How do you handle zero-downtime schema migrations for a stateful database?
 
@@ -29,6 +72,11 @@ Incident Response & On-the-Spot Thinking
 An Azure function is being throttled. How do you detect and mitigate it?
 
 You receive intermittent DNS resolution failures in cloud infra—what could be wrong?
+
+Ans. Intermittent DNS resolution failures in cloud infrastructure are usually caused by capacity,
+networking, caching, or configuration issues rather than a single hard failure.
+
+Reason: Too many DNS queries from apps
 
 A critical end-user reports 10 sec latency spikes periodically — how do you root cause it?
 
@@ -47,19 +95,81 @@ Describe conflict resolution when working with distributed Dev and Ops teams.
 
 Have you ever decided not to automate something? Explain your trade-offs.
 
+Ans. I chose not to automate a rare, high-risk production database schema change that:
+Occurred once or twice a year
+Required business sign-off and careful validation
+Had irreversible impact if done incorrectly
+
 What drives you to continue learning in cloud-native technologies?
 
 company --Amadeus Labs
 Exp-5yr SRE
 
 How to fix pod-level autoscaling not happening, what will be your approach .
+
+When pod autoscaling doesn’t work, I first check HPA status and events, then verify metrics availability and resource requests. 
+Most issues come from missing metrics-server or missing CPU requests. I validate HPA targets, workload compatibility, cluster capacity, 
+and autoscaler behavior. 
+Finally, I simulate load to confirm scaling and add monitoring to prevent recurrence.”
+
+HPA (Horizontal Pod Autoscaler) is a Kubernetes feature that automatically scales the number of pod replicas 
+for a workload based on observed metrics, 
+ensuring performance while optimizing cost.
+
+HPA:
+Increases pods when load is high
+Decreases pods when load is low
+Works automatically without manual intervention
+
 suppose we have application configured with hpa where it was running fine but suddenly it is not running what will be your approach?
+
+Ans. Check HPA status:
+kubectl get hpa <hpa-name>
+kubectl describe hpa <hpa-name>
+
+Verify metrics Availability
+
+“I first check HPA status, events, and metrics availability. I verify pod resource requests, 
+HPA target configuration, and cluster capacity. I inspect controller and Metrics Server logs, 
+simulate load to validate scaling, and apply corrective actions such as fixing metrics, requests, or scaling node pools. Finally, 
+I monitor the system to prevent recurrence.”
+
 How to access application if Ingress is configured but not accessible to end users, how you will resolve ?
+
+Ans.
+INGRESS:
+An Ingress is a Kubernetes resource that defines rules for routing external HTTP/HTTPS traffic to services inside the cluster.
+
+What is an Ingress Controller?
+An Ingress Controller is a pod/service running in the cluster.
+
+Popular Ingress Controllers:
+NGINX Ingress Controller
+Traefik
+HAProxy Ingress
+AWS ALB Ingress Controller
+Istio Gateway (service mesh ingress)
+
 How Kubernetes handles service discovery can you explain .
+
 How to ensure all five application teams don't use more than a particular amount of space?
+
 Leap second in Linux
+
 what type of autmation you have done in k8
+
+Ans.
+In Kubernetes, I’ve automated CI/CD deployments using Helm and GitOps, autoscaling with HPA/VPA, 
+infrastructure provisioning via Terraform, monitoring/alerts with Prometheus and Grafana, 
+secrets/config updates through ConfigMaps and Vault, and DR/backups. 
+I also automated routine cluster maintenance to improve reliability and reduce manual effort.”
+
 Tell what type of aumatation you have done that saved time in your project .
+
+Ans. “By automating deployments, scaling, monitoring, and config management, 
+I reduced repetitive manual tasks by ~60–70%, improved system reliability, 
+and freed up the team to focus on feature development.”
+
 11 . Can pod be scheduled if have below security constent .
   securityContext:
     runAsNonRoot: true
