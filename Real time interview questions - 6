@@ -1,22 +1,123 @@
 LTI MINDTREE INTERVIEW QUESTIONS EXP 3-5 years.
 
 How do you design a fault-tolerant architecture in the cloud?
+
+Ans. Fault Tolerance: means assuming things will fail and ensuring your system continues to operate with minimal disruption.
+Design process:
+Deploy across multiple Availability Zones (AZs)
+Use managed load balancers (e.g., ALB/ELB, Azure Load Balancer)
+Health checks automatically route traffic away from unhealthy instances
+Autoscaling & Autohealing
+
+
 How do you manage secrets securely in GitOps or deployment pipelines?
+
+Ans. We can keep secrets in the below :
+HashiCorp Vault
+AWS Secrets Manager / SSM Parameter Store
+Azure Key Vault
+GCP Secret Manager
+
 How do you implement blue-green or canary deployments using container orchestration?
+
+Ans.
+Blue-Green Deployments
+Concept
+Two identical environments:
+Blue = current production
+Green = new version
+Switch traffic all at once after validation.
+
+Canary Deployments
+Concept
+Gradually shift traffic to the new version
+Observe metrics before full rollout
+
 How do you manage multiple environments using reusable infrastructure code?
+
+Ans. We will use Terraform Modules.
+Key Idea
+Modules = reusable building blocks
+envs/ = thin composition layer
+
+
 What is the purpose of backends in infrastructure-as-code and how do you implement remote state with locking?
+
+Ans. Remote state means storing Terraform state in a shared backend (like S3, Azure Storage, GCS).
+Locking ensures that only one Terraform operation can modify the state at a time.
+
+AWS: S3 Backend with DynamoDB Locking (Most Common)
+Architecture
+S3 → stores terraform.tfstate
+DynamoDB → provides state locking and consistency
+
 How do you implement rollback in an automated deployment pipeline?
+Ans. By running the below command we can rollbacK:
+
+kubectl rollout undo deployment my-app
+
+Automated Rollback Trigger
+Readiness probe fails
+Liveness probe fails
+Post-deploy smoke tests fail
+
 How do readiness and liveness probes work and why are they important in production environments?
+Ans. 
+In Kubernetes, readiness and liveness probes are health checks that tell the platform when to send traffic to a pod and when to restart it. 
+They are fundamental for stability, zero-downtime deployments, and self-healing in production.
+
+If Readiness fails: Kubernetes:
+Removes the pod from Service endpoints
+Stops routing traffic to it
+Pod is NOT restarted
+
+Why it matters in production?
+Prevents traffic going to half-started or degraded pods
+Enables zero-downtime deployments
+
+Liveness Probe:
+What it does
+   Answers: “Is this pod still alive or stuck?”
+If it fails, Kubernetes:
+    Restarts the container
+
 How do you troubleshoot a pod that is stuck in CrashLoopBackOff?
+Ans.
+Check Pod Status & Events (Always First)
+kubectl get pod <pod-name>
+kubectl describe pod <pod-name>
+
+Check container logs:
+kubectl logs <pod-name> -c <container-name>
+kubectl logs <pod-name> -c <container-name> --previous
+
+Common errors:
+Missing or Wrong Configuration
+
+Image Issues
+Wrong image tag
+Image incompatible with runtime
+
 How do you secure sensitive data like passwords or API keys in infrastructure setups?
+Ans. Use password Vaults, AWS Secrets
+
 How does your GitOps tool detect drift and how do you manage it?
+
 Write a script to monitor a service and restart it if it fails, including proper logging.
+
 How do you handle parallel execution in CI/CD workflows?
+Ans. Parallel execution can be done through Master- Slave configuration, in order to speed up the deployment and delivery. 
+
+Why Parallel Execution Matters
+  Reduces pipeline execution time
+  Faster feedback to developers
+  Better resource utilization
+  Scales with microservices and large test suites
+
 What’s the difference between using count and for_each in infrastructure code, and when should you use each?
 How do you monitor and alert on cloud resources effectively?
 
 3rd Round - Synechron,  Client -Morgan Stanley,  Interviewer—Director and Senior DevOps Engineer.
-
 
 All the questions are scenario-based and counter questions. - I have remembered these question , all the counter questions into CICD related and Kubernets.
 ----------------*----------------*----------------------*--------------------
