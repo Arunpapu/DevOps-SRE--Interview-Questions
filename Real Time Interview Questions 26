@@ -10,3 +10,31 @@ How do you prevent misuse or unauthorized usage if someone attempts to spin up M
 What strategies do you use to optimize and control AWS costs for ML workloads?
 How do you set up monitoring and observability for ML models in production?
 You are given a GitHub Actions workflow snippet. How would you identify incorrect steps and suggest improvements or missing steps for a robust CI/CD pipeline?
+
+How would you design a Kubernetes cluster that must survive a full AZ failure without data loss, while running stateful workloads at scale?
+(Storage, networking, controllers, quorum, recovery)
+Explain the complete request flow when using Gateway API with multiple GatewayClasses across regions. How do you prevent split-brain routing?
+
+How do you debug intermittent pod restarts when liveness probes pass, readiness passes, but the pod is still killed by the node?
+
+What happens internally when etcd latency spikes above 500ms? How does it impact the scheduler, controllers, and API server?
+
+Design a multi-tenant Kubernetes platform where teams must not affect each other’s resource usage, network traffic, or upgrade cycles.
+
+How would you implement zero-trust networking inside Kubernetes without using a service mesh?
+
+Describe a real production incident where a misconfigured HPA caused cascading failure. How would you redesign autoscaling to avoid this?
+
+How do you safely refactor a Terraform monorepo with hundredsgg of state files into a module-based architecture without downtime?
+
+Explain how Terraform handles dependency graphs internally. How can circular dependencies still appear in real projects?
+
+How would you manage Terraform when multiple teams deploy to the same AWS account but must not overwrite each other’s resources?
+
+Describe a production failure caused by terraform apply. What guardrails would you implement to prevent it permanently?
+
+Why does a container sometimes exit immediately even though the application works perfectly in local testing? Give 3 real production causes.
+
+How would you design container images for ultra-fast cold starts in serverless or autoscaled Kubernetes environments?
+How do you design GitOps for 1000+ clusters with environment drift detection, emergency hotfixes, and controlled manual overrides?
+
