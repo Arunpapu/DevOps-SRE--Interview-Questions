@@ -15,3 +15,126 @@ How do you handle downtime while upgrades. Any particular strategy or reliabilit
 hat kind of Kubernetes upgrades have you performed?
 Have you worked with developers to understand their requirements? and design CI/CD pipelines for them
 Sprints followed in your project?
+
+
+AWS
+
+Explain the difference between EC2, ECS, and EKS. When would you use each?
+
+Difference between Security Groups and NACLs.
+
+How does IAM role differ from IAM user?
+
+What happens if an EC2 instance is stopped vs terminated?
+
+Difference between ALB, NLB, and CLB.
+
+How does Auto Scaling work with ALB?
+
+What is VPC peering and its limitations?
+
+Difference between S3 and EBS.
+
+Git
+
+What is the difference between git merge and git rebase?
+
+How do you resolve merge conflicts?
+
+🔹 GitHub Actions
+
+How does a GitHub Actions workflow get triggered?
+
+Explain the structure of a GitHub Actions YAML file.
+
+🔹 GitLab CI/CD
+
+Difference between GitHub Actions and GitLab CI/CD?
+
+What are stages and jobs in GitLab pipelines?
+
+Explain the structure of a .gitlab-ci.yml file.
+What are stages, jobs, and pipelines in GitLab?
+
+Difference between artifacts and cache in GitLab.
+
+How do GitLab runners work?
+
+What is a protected branch and protected variable?
+
+How do you trigger pipelines manually in GitLab?
+
+🔹 Docker
+
+Difference between Docker image and container.
+
+What is a multi-stage Docker build and why is it used?
+
+Kubernetes
+
+Difference between Deployment, StatefulSet, and DaemonSet.
+
+How does Kubernetes perform rolling updates?
+
+How does Kubernetes handle pod restarts and failures?
+
+What happens when a node goes into NotReady state?
+
+Difference between ClusterIP, NodePort, and LoadBalancer services.
+
+How do liveness and readiness probes work?
+
+What is the purpose of ConfigMaps and Secrets?
+
+How does Horizontal Pod Autoscaler work internally?
+
+Difference between Ingress and Service.
+
+What is the use of namespaces in Kubernetes?
+
+How do you troubleshoot a pod stuck in 
+CrashLoopBackOff?
+
+🔹 Terraform
+
+What is the Terraform state file?
+
+Difference between terraform plan and terraform apply
+
+Linux & Networking
+
+Where do you create and configure host mappings locally?
+How do you map a domain (like anupama.com) to an IP locally on Linux?
+What is the /etc/hosts file?
+What do you configure in the /etc/hosts file?
+How do you configure DNS resolving on Linux?
+Where do you configure DNS settings on Linux?
+Have you worked with /etc/resolv.conf?
+How do you configure certificates on Linux?
+Have you worked with iptables?
+Have you worked with any firewall tools?
+What do you understand by server utilization?
+How do you identify high server utilization?
+What is load average?
+Explain what a shell script file is.
+How do you run a shell script file?
+What is a cron job?
+How do you use cron jobs?
+
+Other tools 
+
+What is the difference between a private subnet and a public subnet?
+What is AWS Lambda?
+What is Amazon S3?
+What is Terraform?
+How do you integrate Terraform with AWS?
+How do you apply changes in Terraform?
+How do you deploy using Github?
+What is a Dockerfile?
+Explain the structure of a Dockerfile.
+What is the difference between CMD and ENTRYPOINT?
+How do you check running containers in Docker?
+How do you login to a Docker container?
+Explain the architecture of Kubernetes.
+What is High Availability (HA)?
+
