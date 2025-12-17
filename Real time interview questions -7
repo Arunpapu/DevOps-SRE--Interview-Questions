@@ -11,12 +11,34 @@ EPAM DevOps Interview Questions Part-1
 9. How do you implement a canary deployment strategy with real-time monitoring rollback in a CI/CD system?
 10. How do you manage secrets and config securely at scale in Kubernetes without compromising GitOps workflows?
 11. Explain the control plane components of Kubernetes and how you would harden them for production use.
+
 12. How would you scale a Kubernetes cluster horizontally across multiple regions and still ensure zero-downtime upgrades?
+
+Ans. To scale Kubernetes horizontally across multiple regions with zero downtime, I use a multi-cluster, multi-region architecture.
+I run one Kubernetes cluster per region to avoid etcd latency and reduce blast radius.
+For traffic management, I place a global load balancer or DNS in front (like Route53 latency-based routing or cloud global LB). 
+This lets me route users to the nearest healthy region and shift traffic away from a region during upgrades.
+
+
 13. What is a PodDisruptionBudget and how do you use it in critical workloads?
+
+Ans. It is minimum availability of pod during any disruption happens.
+
+How I use PDBs in production:
+Always pair PDBs with replica count > 1
+Use percentage-based PDBs (e.g., minAvailable: 80%) for scalable services
+Combine with RollingUpdate strategy and readiness probes so traffic shifts only to healthy pods
+Validate PDB behavior during node upgrades and autoscaling
+
+
 14. How do you implement and manage network policies in Kubernetes for strict inter-service communication?
+
 15. How would you refactor a legacy Terraform codebase used by multiple teams to follow best practices like DRY and modularity?
+
 16. Explain the internals of how Terraform handles dependencies and graph building during the planning phase.
+
 17. How do you manage and isolate Terraform state files across multiple environments and teams?
+
 18. What's your strategy to prevent and recover from a corrupted or deleted remote backend state file?
 19. Have you implemented policy-as-code (e.g., Sentinel, OPA) with Terraform? Give a real use case.
 20. How would you implement a centralized logging solution across multiple cloud platforms and environments?
