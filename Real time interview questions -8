@@ -6,27 +6,90 @@ Technical Deep Dive ⬅️
 
 1. You’ve deployed an app to Azure Kubernetes Service (AKS) and it fails health checks randomly. How do you debug this end-to-end?
 
+Ans. Identify which health check fails:
+     Check readiness and liveness status
+     Readiness probe → pod temporarily removed from service
+    Liveness probe → pod is restarted
+
+Check Pod & Container Status ( Run commands to check)
+Check CPU/memory requests & limits:
+
 2. In a canary deployment to production, half the traffic returns 502, while others succeed. Walk us through your troubleshooting approach.
+
+Ans. Is the failure consistent or intermittent?
+Look at logs of the canary pods:
+Check readiness/liveness probe failures:
+   Failing probes can remove pods from load balancer prematurely
+
+Check ingress controller logs for 502 errors.
+
+Use metrics and dashboards:
+Prometheus / Grafana for HTTP error rates
+Logs correlation for canary vs stable
+Alerts should help identify the exact failing subset.
 
 3. CI/CD pipeline takes 40 mins to deploy a small change. What would you do to optimize it?
 
+Ans. 1st to check which stage it is taking more time.
+go to manage jenkins - go to console output to check the log- 
+Check wheather all the dependencies and configuration are installed or not.
+check the required plugins are installed or not
+check the no of agents and executor 
+check the script 
+
+
 4. You see high CPU usage in one pod, but logs look clean. What next?
+
+Ans. Run command to check:
+kubectl get logs
+kubectl get pods - o -wide
+kubectl desc pods
+Check CPU usage at the pod level:
+kubectl top pod <pod-name> -n <namespace>
+
+If a pod shows high CPU but logs are clean, I check metrics and node usage, inspect processes inside the pod,
+profile the application and sidecars, verify resource limits, and use observability 
+tools to identify hidden CPU hotspots before tuning or optimizing the workload.”
+
 
 5. You’re asked to design a highly available logging system for 100+ microservices across 3 regions. What tools and architecture would you suggest?
 
 6. Production app works fine for internal users but fails for external ones (403 error). How will you isolate the issue?
 
+Ans. Make sure the external users are connected to VPN.
+App is deployed in public subnet
+DNS should be public
+Security ports should be open ( HTTP &HTTPS)
+Ask to whitelist the ip's
+check WAF rules verifying authentication and authorization policies
+
 7. How do you ensure secure and dynamic secret rotation in Azure DevOps pipelines?
+
+Ans. secure secret stores:
+
+Azure Key Vault
+Azure DevOps Library Secure Variables
+HashiCorp Vault or other external secret managers
 
 8. Explain how you’d use Azure Application Gateway with Web Application Firewall for a sensitive banking application.
 
-9. During an Azure deployment, you receive intermittent DNS resolution issues. What can be the causes?
+9. During an Aws deployment, you receive intermittent DNS resolution issues. What can be the causes?
+
+Ans: “Intermittent DNS issues in AWS deployments can be caused by misconfigured VPC DNS settings, overloaded CoreDNS in EKS, 
+security group or NACL blocks on UDP 53, private hosted zone misconfigurations, Route53 throttling, 
+or client-side resolv.conf misconfigurations.”
 
 10. A user reports 10-second delays every 15 minutes in an app running on AKS. No code changes happened. How would you begin RCA?
 
 11. Jenkins jobs are randomly failing at the artifact upload step. What layers would you check?
 
 12. How would you set up an automated rollback strategy in Kubernetes for failed deployments?
+
+Ans: CI/CD pipeline monitors deployment success via health checks and metrics.
+
+If deployment fails:
+Trigger kubectl rollout undo deployment/<app-name>
+Optionally, promote last known stable image
 
 13. Design a cost-optimized cloud architecture for an internal reporting app that runs every night and stores logs for 3 years.
 
@@ -51,7 +114,25 @@ Lamdba cold start
 AWS CDK commands
 How to implement TF in CD pipeline
 10 developers are checking in code in GIT, I want to remove the code checkin done by developer 10, how to do that ?
+
+Ans. First, Find the commits by Developer 10
+Replace pick with drop (or delete the line)
+Save and exit.
+Git rewrites history removing those commits.
+
 If someone manually changed the EC2 config, which was created through TF, how to fix it ?
+
+Ans. Manual changes to an EC2 instance are out-of-band changes, causing drift.
+
+Drift can lead to inconsistency between infrastructure and Terraform state.
+
+Detect Drift
+  Run Terraform plan to see differences between state and actual infrastructure:
+
+Fixing the Drift
+    a) Revert EC2 to Terraform Desired State
+      Allow Terraform to overwrite manual changes:
+
 I've payment gateway app running in Lambda, sometimes there was an issue with connecting to external API, how to cross check and fix it while performing the payment
 Purpose of Blue Green deployment and how will you switch back to diff deployments ?
 Write a script to check if the external API is reachable before starting the request.
