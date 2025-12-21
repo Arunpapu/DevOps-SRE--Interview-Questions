@@ -2,22 +2,103 @@ Sigmoid 2nd Round
 
 Terraform taint
 How to limit the resource usage in K8s
-asked me to write request and limit usage YAML file
+
+Ans. First, I always define CPU and memory requests and limits for every container
+
+Second, at the namespace level, I use LimitRanges to enforce default, minimum, 
+and maximum values so teams can’t deploy pods without proper sizing.
+
+Horizontal Pod Autoscaling, which scales replicas based on CPU, memory, or custom metrics. 
+This keeps individual pods from being overloaded while maintaining performance
+
+I use Vertical Pod Autoscaler to recommend or automatically adjust resource requests based on actual usage.
+
+
+Asked me to write request and limit usage YAML file
+Ans.
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dev-quota
+  namespace: dev
+spec:
+  hard:
+    requests.cpu: "10"
+    requests.memory: 20Gi
+    limits.cpu: "20"
+    limits.memory: 40Gi
+    pods: "50"
+
 Write a deployment file for the below requirement
 *Create a Deployment named 'space-alien-welcome-message-generator' of image 'httpd:alpine' with one replica.
 *It should've a ReadinessProbe which executes the command 'stat /tmp/ready' . This means once the file exists the Pod should be ready.
 *The initialDelaySeconds should be 10 and periodSeconds should be 5
 
-If Liveness probe is healthy and readiness probe is failing, what will happen
+If Liveness probe is healthy and readiness probe is failing, what will happen ?
+
+Ans. Since liveness is healthy, Kubernetes assumes the container is alive.
+     The container is NOT restarted.
+
+Because readiness is failing, the pod is marked NotReady.
+Kubernetes removes the pod from Service endpoints.
+The pod stops receiving traffic from:
+Services
+Ingress
+Load balancers
+
 How will you find out the data loss while switching back to DBs
+
 Have you integrated Global LB with K8s cluster
-How to enable RBAC to Service accounts
-You created a resource through Terraform but it failed during provision, what will happen
-Purpose of using "null resource" in Terraform
-If some developer hardcoded password mistakenly in source code and pushed to repo, how to fix it in CI process
-If terraform deployment got failed, what will be the approach
+
+Ans. A Global Load Balancer (GLB) sits in front of EKS/AKS
+GLB routes traffic based on health, latency, geo, or failover rules
+
+How to enable RBAC to Service accounts ?
+
+Ans. “RBAC for service accounts is enabled by creating a Role or ClusterRole with required permissions and binding 
+it to the service account using a RoleBinding or 
+ClusterRoleBinding, then attaching that service account to the pod.”
+
+You created a resource through Terraform but it failed during provision, what will happen ?
+
+Ans. Terraform stops execution at the failed resource.
+Dependent resources will not be created.
+Resource is not added to the state file.
+
+“If Terraform fails during resource creation, it stops execution. The resource may not be added to state 
+if creation failed, but if it failed during provisioning, the resource may exist partially, causing drift. 
+I verify actual infrastructure, reconcile state if needed, fix the issue, and re-apply.”
+
+Purpose of using "null resource" in Terraform ?
+
+Ans. What is null_resource?
+     A placeholder resource that doesn’t create anything in the provider.
+        Used mainly to:
+        Execute scripts 
+        Run commands
+        Trigger actions based on changes
+
+If some developer hardcoded password mistakenly in source code and pushed to repo, how to fix it in CI process ?
+
+If terraform deployment got failed, what will be the approach ?
+
+Ans. When a Terraform deployment fails, I first identify whether the resource was not created, 
+partially created, or created outside state. I reconcile the real infrastructure with Terraform state using plan, import, 
+or re-apply, fix the root cause, and then rerun apply. Long-term, I prevent failures by avoiding provisioners, 
+using remote state with locking, and enforcing plan-before-apply in CI/CD.”
+
 Write a script to capture the failures
+
 Metrics used for monitoring
+Disk space 
+Disk write
+CPU Utilization
+uptime
+
+I monitor infrastructure metrics like CPU and memory, Kubernetes metrics at node and pod level, 
+application golden signals—latency, traffic, errors, and saturation—along with reliability, database, 
+CI/CD, and security metrics to get full end-to-end visibility.”
+
 
 Sigmoid 
 
