@@ -57,18 +57,49 @@ Ans. Node Affinity:
 Node vs Pod Affinity (Comparison)
 Based on	Node labels	Pod labels
 
-what is taint and tolerations in K8
-what is the terraform command for unlock statefile
-what is module in terraform
-suppose there are multiple ec2 instances manually created via console, I have to update those ec2 instances via terraform, what is the command
+what is taint and tolerations in K8 ?
+
+Ans. What Is a Taint?
+   A taint is applied to a node and tells Kubernetes:
+  “Do NOT schedule Pods here unless they can tolerate this.”
+
+  What Is a Toleration?
+    A toleration is applied to a Pod and allows it to run on tainted nodes.
+
+what is the terraform command for unlock statefile ?
+
+Ans. terraform force-unlock <LOCK_ID>
+
+ How to Get the LOCK_ID
+When Terraform fails due to a lock, it shows an error like:
+Error acquiring the state lock
+Lock Info:
+  ID:        12345678-abcd-efgh
+
+what is module in terraform ?
+Ans. In Terraform, a module is a reusable, self-contained collection of Terraform configuration files used to create and manage infrastructure.
+
+
+suppose there are multiple ec2 instances manually created via console, I have to update those ec2 instances via terraform, what is the command ?
+
+
 write python program for reverse a string
 what is list and tuple in python
-difference between entrypoint and cmd in docker
+
+difference between entrypoint and cmd in docker ?
+Ans.  entrypoint - Some default process will run
+      cmd - Default linux coma=mand will run. 
+
 what is the difference between copy and run command in docker
-suppose you are having an ecs task definition, I have an website , the developer is hitting the url or website, what will be the flow of traffic , fargate is a serverless – how do you achieve configuration DNS or website over there
+
+suppose you are having an ecs task definition, I have an website , the developer is hitting the url or website, what will be the flow of traffic , 
+fargate is a serverless – how do you achieve configuration DNS or website over there
 what is task definition in ecs
+
 image is there docker, I want to build an image, deploy to docker hub, tag it - commands in docker please
-am having some min max pods running, suppose on festival day traffic increases at that time I have to increase pods, when no traffic is there I have reduce the pods, how will you achieve it in K8
+am having some min max pods running, suppose on festival day traffic increases at that time I have to increase pods, when no traffic is there I have reduce the pods,
+how will you achieve it in K8
+
 difference between cloud formation and terraform
 what is the difference between ecs and fargate
 
