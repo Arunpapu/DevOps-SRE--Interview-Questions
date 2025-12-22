@@ -1,8 +1,62 @@
-Virtusa interview questions - tech lead position 1.    difference between deployement and replicaset and daoemonset and statefulset (what key words you will be writing over the, for ex : deployement.yml – rolling update, canary)
+Virtusa interview questions - tech lead position 
+
+1. difference between deployement and replicaset and daoemonset and statefulset (what key words you will be writing over the, 
+for ex : deployement.yml – rolling update, canary)
+
+Ans. Deployment - Creates and manages ReplicaSets
+                  Supports rolling updates & rollbacks
+                  Ensures the desired number of Pods are running
+ReplicaSet:
+           A ReplicaSet ensures a specific number of Pod replicas are running at all times.
+           What it does
+               Keeps Pods running (recreates them if they crash)
+                No deployment strategy (no rolling updates by itself)
+DaemonSet
+      What it is:
+      A DaemonSet ensures one Pod runs on every node (or selected nodes).
+      What it does
+     Automatically adds Pods when new nodes join
+      Removes Pods when nodes are removed
+
 what is chart.yml file contains in K8
-what files will be present in helm chart
+
+Ans. Chart.yaml describes what the Helm chart is, its version, and basic info so Helm knows how to install and manage it.
+mychart/
+ ├── Chart.yaml
+ ├── values.yaml
+ └── templates/
+
+what files will be present in helm chart ?
+
+Ans. Helm Chart Structure
+     mychart/
+├── Chart.yaml
+├── values.yaml
+├── charts/
+├── templates/
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   ├── ingress.yaml
+│   ├── _helpers.tpl
+│   └── NOTES.txt
+├── .helmignore
+
 what you will declare in values.yml etc
-what is node affinity and pod affinity  in K8
+ Ans. Application & Deployment Settings
+      Service Configuration
+      Ingress Configuration
+
+what is node affinity and pod affinity  in K8 ?
+
+Ans. Node Affinity:
+     Node affinity lets you tell Kubernetes which nodes a Pod can or should run on, based on node labels.
+
+    Pod Affinity:
+    Pod affinity controls scheduling based on other Pods’ labels.
+
+Node vs Pod Affinity (Comparison)
+Based on	Node labels	Pod labels
+
 what is taint and tolerations in K8
 what is the terraform command for unlock statefile
 what is module in terraform
