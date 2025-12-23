@@ -1,24 +1,35 @@
 Docker:
-I can able to get access application from outside container but from inside getting packet loss. How do you trobleshoot. ( Issue related to container networking , firewall rules, DNS)
+I can able to get access application from outside container but from inside getting packet loss. How do you trobleshoot. 
+Ans. ( Issue related to container networking , firewall rules, DNS)
+
 How do you get logs from docker level. ( By running command - docker logs container id.) 
+
 Two containers are there. One with front end application and second container has db.Fisrt I want to start db then front end. What should you do?( 2tier application)
 
 Kubernetes:
 How do you call pod1 to pod2 without service. ( Using pod ip directly ,http://<pod2-ip>:<port>, to get pod 2 ip - docker get pods -o -wide) 
 
-2.what is Container Network Interface ? (Assigning an IP address to a container, Every container/pod needs its own network interface and IP.
+2.what is Container Network Interface ? 
+
+Ans.(Assigning an IP address to a container, Every container/pod needs its own network interface and IP.
 CNI handles:IP allocation & Interface creation)
 
-3.what is CSI driver? (A CSI Driver (Container Storage Interface Driver) is a standard plugin that allows Kubernetes (and other container orchestration systems) 
+3.what is CSI driver? 
+
+Ans.(A CSI Driver (Container Storage Interface Driver) is a standard plugin that allows Kubernetes (and other container orchestration systems) 
 to connect to external storage systems such as: AWS EBS , NFS etc)
 
-4.Static volume provisioning and dynamic volume provisioning. Explain in with use case. (the admin manually create the PersistentVolume (PV) before a workload uses it.
+4.Static volume provisioning and dynamic volume provisioning. Explain in with use case. 
+
+Ans. (the admin manually create the PersistentVolume (PV) before a workload uses it.
 USE Case (Pre-existing NFS, iSCSI, SAN storage, Migration from legacy systems, When storage must be manually controlled)
 
 Dynamic volume provisioning -( We create only a PersistentVolume Claim (PVC).
 Use Cases :Cloud storage (AWS EBS, GCP PD, Azure Disk), Highly scalable workloads, On-demand volumes
 
-5.what is auto volume expansion. (Auto Volume Expansion = Automatically grow your storage when PVC size increases.
+5.what is auto volume expansion. 
+
+Ans. (Auto Volume Expansion = Automatically grow your storage when PVC size increases.
 It is a Kubernetes feature that allows a PersistentVolumeClaim (PVC) to automatically increase its storage size without recreating the PVC or restarting the Pod.)
 
 what is land job activity in migration ? (A scheduled activity that loads (or lands) data from the source system into a temporary/staging layer in the target environment.)
@@ -29,7 +40,9 @@ what is land job activity in migration ? (A scheduled activity that loads (or la
 
 5.day to day actives what type of work ur doing is it a support/project 
 
-6.what type of pipelines ur handling basically it means QA ,UAT ? (I work with end-to-end CI/CD pipelines across multiple environments — DEV, QA, UAT, Staging, and Production.
+6.what type of pipelines ur handling basically it means QA ,UAT ? 
+
+Ans. (I work with end-to-end CI/CD pipelines across multiple environments — DEV, QA, UAT, Staging, and Production.
 The pipelines include building the application, containerizing it, running automated tests, scanning for vulnerabilities, and deploying to Kubernetes.
 QA pipelines run integration and regression tests, UAT pipelines involve manual approvals for stakeholder validation, 
 and production pipelines include automated rollback and monitoring.”
@@ -114,7 +127,8 @@ Use authentication (OAuth, SAML, or cloud IAM) & VPN
 but on otherside ur saying that express-route is more secure > So how can u justy that, because banking costumer has a limitation for him
 
 14.IN which senario we will go for site-to-site vpn  and Expressroute ?
-Site-to-Site VPN - (A Site-to-Site VPN connects your on-premises network to AWS over the public Internet using an IPsec VPN tunnel)
+
+Ans. Site-to-Site VPN - (A Site-to-Site VPN connects your on-premises network to AWS over the public Internet using an IPsec VPN tunnel)
 Use Cases
 Quick, low-cost connectivity to AWS
 Non-latency-sensitive workloads
@@ -132,7 +146,9 @@ High-performance applications (ERP, databases, SAP, SAP HANA)
 16. lets say i have a condition i need to access the data which is stored in storage account but that is huge data which is comming from enduser perspective lets say some cppotency that is recording 24/7 and data will be stored but at the same time if anyone comes and to retrieve the data obviously they will get it from storage account,now i need to implement some cost optimisation techniques on storage account to reduce cose because data to be incresed daytoday ?whta afre the possible ways 
 with respective storageaccount
 
-16.suppose u have created a storage accouunt with hot-tier is it possible to change to cool-tier ( Yes, we can, from standard to Glacier and other storage class as well using
+16.suppose u have created a storage accouunt with hot-tier is it possible to change to cool-tier ?
+
+Ans. ( Yes, we can, from standard to Glacier and other storage class as well using
 life cycle management policies)
 
 17. manually we can change from hottier to cool tier ,but when i have huge data it will take time right .\
@@ -160,7 +176,9 @@ Metrics to monitor: CPU, memory, disk, network bandwidth, uptime
 some thresold values given by customers but considering huge infra but ur getting hundreds of alerts ,in that alert how can u segregate  
 that we need to findout ,which alert we need to proporitise ,any appriach u have ?
 
-23.Any known issues u encountered any pipeline is integrated/ any production code is ur pushing or production any known issue and tell which is critical and how u got resolved 
+23.Any known issues u encountered any pipeline is integrated/ any production code is ur pushing or production any known issue and tell which is critical and how u got
+resolved ?
+
 1️⃣ Issue Encountered
 During production deployment, one of the services failed to start after the new container image was deployed.
 Error observed: CrashLoopBackOff in Kubernetes pods.
