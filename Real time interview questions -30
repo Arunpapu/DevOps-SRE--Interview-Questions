@@ -1,0 +1,143 @@
+Company name : Perfios
+
+What happens when an user hits "www.clarify.com" how the request pass through the network ?? write a diagram and explain it to me
+
+Explain amazon traffic architecture how it goes to private subnet? I write diagram and explained it
+
+Do you use pipeline for three different env or one for all? Explain how?write a groovy script using any ci cd took for build, test and deploy stages.
+
+Difference between cluster ip and node port?
+
+How does a three tier architecture looks like? Compare it with two tier
+
+What are ALB and NLB, and when should you use each one?
+
+Write a shell script to sum (1..100) and give me result
+
+Canary vs blue green
+
+How to achieve zero downtime application upgrade?
+
+Have you contributed any automation initiatives in your current company as a DevOps engineer?
+
+Third round questions:
+
+When you deploy from CI, you build a package and then need a platform to deploy the application. How do you build that platform, and if it requires human intervention, how do you eliminate that dependency?
+In GitHub, after a code commit, what validations do you perform? Do you validate before the commit or after the commit?
+Write a shell script that takes an integer N as input and prints numbers in a triangular pattern.
+Each row should contain consecutive numbers, but printed in reverse order, and the number of elements in each row should increase by one.
+
+
+
+Mind Tree 
+
+How do you deploy python application on aws using jenkins pipeline
+How do your day starts and what activities you perform
+How do you upgrade your eks
+How do you handle when pod dies
+Your aws jenkins pipeline takes high time, how will you troubleshoot
+Create manifest for 2 nginx replicas
+Create a terrsform state file s3 bucket which expires within 30 days
+How do you provide security in docker
+
+
+Interview questions i got for round 1, 5 year DevOps experience-> 
+
+Q1: lets say our app is nodejs app how wd u setup cicd pipeline
+and which ci/cd tools would you use?
+Q2: we are going to launch a website with many different products
+running many services and is expected to get high load during black friday
+how would u set up and make it highly available?
+Q3: users are facing slownesss issue, what will u do to resolve?
+Q4: now it is hosted and one of the services is leaking memory, how would you troubleshoot?
+Q5: out of aws and azure what would u choose and why?
+Q6: now the application is hosted and running, the billing is too much, the client asks you to
+reduce the billing by doing the needful, what would you do to reduce billing?
+Q7: diff b/w terraform, cloudformation and arm and what would u prefer?
+Q8: How would you store secure info inside s3?
+Q9: In lambda function, how would you handle failures and how would you set up retries?
+Q10: Lets say we have already hosted and app, now some changes has been made
+How would you redeploy this application with zero down time?
+
+Interview questions for Kubernetes, Round - 1 (IBM) - Dec-2025
+
+k8s node pending state how to debug
+pod is pending state, due to disk issue, how to resolve
+Have u done k8s cluster upgrade
+u r unable to evict the pods from node, how to resolve
+Tell me the flow of network packets starting from user hit the application url
+Suppose during upgrade storage plugin had issue, unable to upgrade, what u will do ? (couldn't answer properly)
+what is pullsecret in Openshift, there were 1 more but forgot
+what is kubernetes operator? If I need to run a shell script before any container to start how can i do it using operator ?
+how do u handle sev-1 issue
+What is the extra component/service present in Managed k8s cluster in cloud
+
+
+Nitor Infotech
+Sr.Devops Engineer Round1
+
+1.CI/CD setup in current project. How does the flow look like
+2.Gitops approach, ArgoCD, Flux
+3.Shared libraries in jenkins
+4.How is caching implemented in jenkins in your project
+5.Current jenkins version
+6.How have you implemented parallelism in your pipelines
+7.Statefulset, daemonset, Deployment
+8.Networking in kubernetes, how have you implemented
+9.Taints, tolerations, affinity
+10.How would you reduce the runtime of pipeline, multi stage build
+11.SCP
+12.VPC Endpoint, IGW, Transit Gateway, Virtual Gateway
+Need to provide user only EC2 start and stop access how would you do it
+User has the role with policy to access S3 bucket, but it still not able to access what may be the reason
+Terraform refresh command
+How do you handle infrastructure code for multiple environments using terraform
+State locking in terraform
+
+Create a Deployment named web-app with:
+Image: nginx:1.25
+Replicas: 3
+Container port: 80
+Labels: app=web
+
+19.Write a nodeport service to expose the application on port 8080 for the above deployment
+
+20.Write a script to count how many processes are running under the user ubuntu.
+
+How have you implemented RBAC in your EKS setup
+
+ZS associates (Round 1)
+
+If you are implementing HPA for statefulsets if new pod comes the pvc would be empty? How would it be able to serve the request?
+
+When would prefer on-prem Kubernetes cluster over EKS and vice-versa
+
+3.ECR
+
+Kubernetes architecture in depth. Every component functioning. How would you join a new node to control plane?
+
+Like kubelet is there any similar agent used to manage the control plane side of things?
+
+When would you implement HPA and VPA. Give an example
+
+Node selector, taints tolerations
+
+Pod is in pending state. Reasons?
+
+How would you implement security for Kubernetes(both on container side and the infra side using native Kubernetes solutions)
+
+What is the controller used to manage the self managed worker nodes
+
+What is karpenter. On which metric does it scale up and down?
+
+EKS cluster upgrade entire process
+
+Helm commands, how would you deploy an application via helm. How do you integrate this entire process via CI/CD
+
+Project specific questions(How would you setup a new environment on AWS, Terraform code provisioning)
+
+How many clusters are you managing currently, No of addons you have deployed
+
+Why would you need an application to be deployed as stateful set
+
+How are you provisioning infra using terraform via CI/CD
