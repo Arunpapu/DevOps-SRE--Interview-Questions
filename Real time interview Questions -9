@@ -1,3 +1,4 @@
+
 Sigmoid 2nd Round 
 
 Terraform taint
@@ -103,14 +104,34 @@ CI/CD, and security metrics to get full end-to-end visibility.”
 Sigmoid 
 
 If LB is created in us-south and that region is down what will happen ?
+
+Ans. A load balancer created in us-south is scoped to that region
+If the us-south region has an outage:
+The LB itself becomes unreachable
+Backends in that region are also typically unreachable
+
+Solution:
+Deploy LBs in multiple regions
+Use global traffic management
+DNS-based failover
+
+Client traffic fails (timeouts / connection er
 If RDS is hosted in us-west region and has read replicas spread across other region, due to some issue us-west region is down, how will you redirect your traffic. But having one more DB is expensive to the client
-Which deployment strategy is best, assuming that you have only one POD is running
+Which deployment strategy is best, assuming that you have only one POD is running -
+
+Ans. If only one Pod can run at a time, the best deployment strategy is Recreate.
+
 If you're going with Blue Green deployment, how will you change your configuration to reroute the traffic between blue and green, exactly which configuration needs to changed?
 New web deployment was done today, how will you make sure that particular application is behaving and we need to find out the issues before user's figures out
 Practical difficulties in having the infra in two different regions
 Write a shell script to delete the log files which is older than 30 days
+
+
 Failover mechanism in LB
 Is it possible to have ASG and LB in different regions ?
+
+Ans. An Auto Scaling Group (ASG) and a Load Balancer (LB) must be in the same region to work together.
+
 How to create sub user while writing Docker file
 Creating custom images
 How to enable Debug logs in Terraform
